@@ -1,5 +1,5 @@
 """
-GUI for the awesomest calculator app in existence.
+GUI for Calcul8r Alig8r: the awesomest calculator app in existence.
 """
 
 import tkinter as tk
@@ -21,6 +21,7 @@ Buttons: https://tkdocs.com/shipman/button.html
 
 # Create the application window
 window = tk.Tk()
+window.title("Calcul8r Alig8r")
 
 # Create Frame to hold the number display and undo/clear buttons
 display_frame = tk.Frame()
