@@ -25,13 +25,20 @@ class Calculator:
 
 class CalculatorApp(tk.Tk):
     """ GUI class based on TKinter. """
+
+    # important instance variables
+    display: tk.Label
+    calculator: Calculator
+
     def __init__(self, calc: Calculator):
         """ Sets the title, creates the layout, then sets actions to run for events. """
         super().__init__()
         self.title("Calcul8r Alig8r")
         self.create_layout()
         self.set_commands()
+
         self.calculator = calc
+        self.calculator.set_accumulator(0)
 
     def set_commands(self):
         """ Sets the event handlers for the application. """
