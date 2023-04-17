@@ -1,17 +1,37 @@
 """
-GUI for Calcul8r Alig8r: the awesomest calculator app in existence.
+Calcul8r Alig8r: the awesomest calculator app in existence.
 """
 
 import tkinter as tk
 from tkinter import ttk
 
+class Calculator:
+    """ Model for a simple accumulating calculator with support for a limited set of arithmetic operations. """
+
+    _accumulator: int
+
+    def __init__(self) -> None:
+        self._accumulator = 0
+
+    def set_accumulator(self, num: int) -> None:
+        """ Sets the accumulator to the given <num>. """
+        self._accumulator = num
+
+    def add(self, num: int) -> int:
+        """ Adds <num> to the accumulator, returning the updated value for the accumulator. """
+        self._accumulator += num
+        return self._accumulator
+
+
 class CalculatorApp(tk.Tk):
-    def __init__(self):
+    """ GUI class based on TKinter. """
+    def __init__(self, calc: Calculator):
         """ Sets the title, creates the layout, then sets actions to run for events. """
         super().__init__()
         self.title("Calcul8r Alig8r")
         self.create_layout()
         self.set_commands()
+        self.calculator = calc
 
     def set_commands(self):
         """ Sets the event handlers for the application. """
@@ -133,6 +153,11 @@ class CalculatorApp(tk.Tk):
         self.zero_button.grid(row = 3,column = 0, columnspan = 2, sticky = "we")
         self.equal_button.grid(row = 3,column = 2)
 
+    def set_display(self, num: int) -> None:
+        """ Updates the text shown in the display to <num>. """
+        self.display['text'] = str(num)
 
-app = CalculatorApp()
+
+calculator = Calculator()
+app = CalculatorApp(calculator)
 app.mainloop() # Start the GUI event loop
