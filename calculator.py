@@ -19,7 +19,15 @@ Buttons: https://tkdocs.com/shipman/button.html
 """
 
 class CalculatorApp(tk.Tk):
+    def __init__(self):
+        """ Sets the title, creates the layout, then sets actions to run for events. """
+        super().__init__()
+        self.title("Calcul8r Alig8r")
+        self.create_layout()
+        self.set_commands()
+
     def set_commands(self):
+        """ Sets the event handlers for the application. """
         def append0():
             self.display['text'] += '0'
 
@@ -61,17 +69,11 @@ class CalculatorApp(tk.Tk):
         self.eight_button['command'] = append8
         self.nine_button['command'] = append9
 
-
-    # Create the application window
-    #window = tk.Tk()
-
-    def __init__(self):
-        super().__init__()
-        self.title("Calcul8r Alig8r")
-        self.create_layout()
-        self.set_commands()
+    
 
     def create_layout(self):
+        """ Creates the widgets and lays them out in the application window. """
+        
         # Create Frame to hold the number display and undo/clear buttons
         display_frame = tk.Frame(self)
         display_frame.grid(row=0, column=0, columnspan=5)
@@ -80,16 +82,16 @@ class CalculatorApp(tk.Tk):
         # within the display_frame using the grid layout manager
 
         self.display = tk.Label(display_frame, bg="white", fg="black", text="0", width=15, height=2)
-        self.undo = tk.Button(display_frame, text="Undo")
-        self.clear = tk.Button(display_frame,text="Clear")
+        self.undo_button = tk.Button(display_frame, text="Undo")
+        self.clear_button = tk.Button(display_frame,text="Clear")
+
         self.display.grid(row=0, column=0, columnspan=4, rowspan=2)
-        self.undo.grid(row=0, column=4)
-        self.clear.grid(row=1, column=4)
+        self.undo_button.grid(row=0, column=4)
+        self.clear_button.grid(row=1, column=4)
 
         # Create Frame to hold the operator (e.g. +, -, ...) buttons
         operators_frame = tk.Frame(self)
         operators_frame.grid(row=1, column=0, columnspan=5)
-
 
         # create operator buttons and place them within the operators_frame using
         # the grid layout manager
