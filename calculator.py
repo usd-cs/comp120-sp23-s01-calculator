@@ -5,19 +5,6 @@ GUI for Calcul8r Alig8r: the awesomest calculator app in existence.
 import tkinter as tk
 from tkinter import ttk
 
-"""
-The following are simple examples for creating a label and a button.
-
-my_label = tk.Label(container, text="Hello World")
-my_button = tk.Button(container, text="Click Me!")
-
-The following links will be useful for helping you customize your labels and
-buttons.
-
-Labels: https://tkdocs.com/shipman/label.html
-Buttons: https://tkdocs.com/shipman/button.html
-"""
-
 class CalculatorApp(tk.Tk):
     def __init__(self):
         """ Sets the title, creates the layout, then sets actions to run for events. """
@@ -73,7 +60,7 @@ class CalculatorApp(tk.Tk):
 
     def create_layout(self):
         """ Creates the widgets and lays them out in the application window. """
-        
+
         # Create Frame to hold the number display and undo/clear buttons
         display_frame = tk.Frame(self)
         display_frame.grid(row=0, column=0, columnspan=5)
