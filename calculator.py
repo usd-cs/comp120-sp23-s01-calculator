@@ -94,16 +94,17 @@ class CalculatorApp(tk.Tk):
         # create operator buttons and place them within the operators_frame using
         # the grid layout manager
 
-        self.plus =  tk.Button(operators_frame, text= "+")
-        self.plus.grid(row=1, column=1)
-        self.minus = tk.Button(operators_frame, text="-")
-        self.minus.grid(row=1, column=2)
-        self.divide = tk.Button(operators_frame,text= "/")
-        self.divide.grid(row=1, column=3)
-        self.multiply = tk.Button(operators_frame, text ="x")
-        self.multiply.grid(row=1, column=4)
-        self.power = tk.Button(operators_frame, text ="^")
-        self.power.grid(row=1, column=5)
+        self.plus_button =  tk.Button(operators_frame, text= "+")
+        self.minus_button = tk.Button(operators_frame, text="-")
+        self.divide_button = tk.Button(operators_frame,text= "/")
+        self.multiply_button = tk.Button(operators_frame, text ="x")
+        self.power_button = tk.Button(operators_frame, text ="^")
+
+        self.plus_button.grid(row=1, column=1)
+        self.minus_button.grid(row=1, column=2)
+        self.divide_button.grid(row=1, column=3)
+        self.multiply_button.grid(row=1, column=4)
+        self.power_button.grid(row=1, column=5)
 
         # Create Frame to hold the number and = buttons
         numbers_frame = tk.Frame(self)
